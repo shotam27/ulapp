@@ -13,19 +13,14 @@ jobs:
           name: Which bundler?
           command: bundle -v
       - ruby/bundle-install      
-  # deploy ジョブ: EC2 に SSH 接続して、デプロイを実行する
   deploy:
-      machine:
-          image: circleci/classic:edge
-      steps:
-          - checkout
-          # CircleCI に登録した秘密鍵を呼び出す
-          - add_ssh_keys:
-            fingerprints: 
-              - "d9:14:c3:7f:da:29:1b:82:4d:e2:0e:37:77:b0:3b:84"
-          # CircleCI に登録した環境変数を使って SSH
-          - run: ssh ${USER_NAME}@${HOST_NAME} 'cd ulapp && git pull'
- 
+    machine:
+      image: circleci/classic:edge
+    steps:
+      - checkout
+      - add_ssh_keys:
+      - run: ssh ${USER_NAME}@${HOST_NAME} 'cd ulapp && git pull'
+
 workflows:
     version: 2
     # build_and_deploy ジョブ: 一番最初に呼ばれるジョブ
