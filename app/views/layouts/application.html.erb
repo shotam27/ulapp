@@ -10,6 +10,18 @@
   </head>
 
   <body>
+      <header id='menu'>
+      <p>
+        AwsTutorial
+      </p>
+      <ul>
+        <li><%= link_to "EVENTS", "../events/index" %></li>
+        <li><%= link_to "Menu1", "#" %></li>
+        <li><%= link_to "Menu2", "#" %></li>
+        <li class='last'><%= link_to "Menu5", "#" %></li>
+      </ul>
+    </header>
+    
     <%= yield %>
   </body>
 </html>
