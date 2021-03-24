@@ -18,6 +18,11 @@ jobs:
       image: circleci/classic:edge
     steps:
       - checkout
+      - run: sudo pip install awscli
+      - run:
+          name: SSH経由のデプロイ
+          command: |
+            ./shells/deploy.sh
       - add_ssh_keys:
           fingerprints:
             -"70:44:99:ca:99:4b:22:70:28:d5:14:db:c2:55:53:7e"
