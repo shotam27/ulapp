@@ -21,7 +21,7 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             -"70:44:99:ca:99:4b:22:70:28:d5:14:db:c2:55:53:7e"
-      - run: ssh shota@ip-10-0-0-180 'cd ulapp && git pull'
+      - run: ssh shota@ec2-35-73-118-109.ap-northeast-1.compute.amazonaws.com 'cd ulapp && git pull'
 
 workflows:
     version: 2
