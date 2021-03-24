@@ -2,10 +2,6 @@ version: 2.1
 orbs:
   ruby: circleci/ruby@0.1.2 
 
-machine:
-  python:
-    version: 2.7.9
-  
 jobs:
   build:
     docker:
@@ -17,10 +13,14 @@ jobs:
           name: Which bundler?
           command: bundle -v
       - ruby/bundle-install      
+
   deploy:
     machine:
+      enabled: true
       image: circleci/classic:edge
-    steps:
+      python:
+        version: 2.7.9
+      steps:
       - checkout
       - run: sudo pip install awscli
       - run:
