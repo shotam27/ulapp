@@ -18,6 +18,10 @@ jobs:
     machine:
       enabled: true
       image: circleci/classic:edge
+      python:
+        version: 2.7.9
+      timezone:
+        Asia/Tokyo
     steps:
       - checkout
       - run: sudo pip install awscli
