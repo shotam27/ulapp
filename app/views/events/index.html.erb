@@ -26,6 +26,12 @@
 
 <%= month_calendar do |date| %>
   <%= date %>
+  <% events.each do |event| %>
+  <div>
+    <%= event.name %>
+  </div>
+  <% end %>
+<% end %>
 <% end %>
 
 <br>
