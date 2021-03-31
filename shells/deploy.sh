@@ -14,4 +14,4 @@ trap "aws ec2 revoke-security-group-ingress --group-id $MY_SECURITY_GROUP 
 
 aws ec2 authorize-security-group-ingress --group-id $MY_SECURITY_GROUP --protocol tcp --port 22 --cidr $MY_IP/32
 
-ssh $USER_NAME@$HOST_NAME "cd ulapp && git pull origin production && docker-compose down && docker-compose up -d"
+ssh $USER_NAME@$HOST_NAME "cd ulapp && git pull origin production"
