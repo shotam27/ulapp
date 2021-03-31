@@ -3,6 +3,7 @@ class EventsController < ApplicationController
 
   # GET /events or /events.json
   def index
+    @msg = current_user.email
     @events = Event.all
   end
 
