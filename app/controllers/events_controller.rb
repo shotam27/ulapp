@@ -6,7 +6,7 @@ class EventsController < ApplicationController
     if current_user == nil then
       redirect_to '/users/sign_in'
     else
-      @msg = current_user
+      @msg = current_user.email
     end
 
     @events = Event.all
