@@ -7,9 +7,9 @@ class EventsController < ApplicationController
       redirect_to '/users/sign_in'
     else
       @msg = current_user.email
+      @events = current_user.event.all
     end
 
-    @events = Event.all
   end
 
   # GET /events/1 or /events/1.json
