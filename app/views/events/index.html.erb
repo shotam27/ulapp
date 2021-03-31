@@ -14,6 +14,7 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
+        <td><%= event.user_id %></td>
         <td><%= event.name %></td>
         <td><%= event.start_time %></td>
         <td><%= link_to 'Show', event %></td>
