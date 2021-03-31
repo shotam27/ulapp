@@ -3,7 +3,9 @@ class EventsController < ApplicationController
 
   # GET /events or /events.json
   def index
-    @msg = current_user.email
+    if current_user == nil then
+      redirect_to '/users/sign_in'
+    end
     @events = Event.all
   end
 
