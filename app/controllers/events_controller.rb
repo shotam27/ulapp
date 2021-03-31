@@ -5,7 +5,10 @@ class EventsController < ApplicationController
   def index
     if current_user == nil then
       redirect_to '/users/sign_in'
+    else
+      @msg = current_user
     end
+
     @events = Event.all
   end
 
