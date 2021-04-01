@@ -4,53 +4,120 @@
  *= require_self
  */
 
- body { 
-    background:white;
-    color:gray;
-    margin:0;
-  }
-  #content {
-    margin: 1% 3%;
-  }
-  
-  #menu {
-    display: flex;
-    margin-right:0px;
-    background: white;
-    color: black;
-    justify-content: flex-end;
-    align-items: center;
-    height: 72px;
-    box-shadow: 0 0 8px gray;
-  }
-    #menu > p {
-      margin: auto;
-      margin-left:24px;
-      font-size:24px;
-    }
-    #menu > ul {
-      display: flex;
-      margin: 0;
-      height: 36px;
-    }
-  
-    #menu > ul > li{
-      display: flex;
-      background: white;
-      margin:0;
-    }
-      #menu > ul > li > a {
-        display: flex;
-        padding-left: 15px;
-        padding-right: 15px;
-        color:black;
-        text-decoration: none;
-        height: 36px;
-        transition: all 300ms 0s ease;
-        align-items: center;
-      }
-      
-      #menu > ul > li:hover > a {
-        background-color: gray;
-        color:white
-      }
+body { 
+  background:white;
+  color:gray;
+  margin:0;
+}
+#content {
+  margin: 1% 3%;
+}
+
+#header-nav {
+  display: flex;
+  margin:0px;
+  background: white;
+  color: black;
+  justify-content: flex-end;
+  align-items: center;
+  height: 72px;
+  box-shadow: 0 0 8px gray;
+}
+
+#header-nav .title {
+  font-size: 36px;
+  position: relative;
+  color: gray;
+  margin-right: auto
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+a {
+}
+
+a,
+a:visited {
+  color: inherit;
+}
+
+
+/* カラム落ちの防止 */
+.header-list {
+  height: 72px;
+  width: 25%;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* メインメニュー */
+.menu-item {
+  display: inline-block;
+  width: 25%;
+  height: 100%;
+  position: relative;
+}
+
+.menu-item a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  line-height: 100%;
+  font-size: 16px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  transition: all 300ms 0s ease;
+}
+
+/* サブメニュー */
+.sub-menu {
+  position: absolute;
+  width: 100%;
+  top: 72px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sub-menu-item {
+  overflow: hidden;
+  opacity: 0;
+  height: 0;
+  /* サブメニューが出現する速度の調整 */
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+/* メインメニューマウスカーソルが乗ったらサブメニューを出現させる */
+.menu-item:hover > .sub-menu > .sub-menu-item {
+  overflow: visible;
+  opacity: 1;
+  height: 54px;
+  box-shadow: 0 0 8px gray;
+}
+
+.menu-item:hover > a {
+  background-color: gray;
+  color: white;
+}
+
+.sub-menu-item:hover > a {
+  background-color: gray;
+  color: white;
+}
