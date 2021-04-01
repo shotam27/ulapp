@@ -1,5 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<h1>user list</h1>
+
+<% User.all.each do |user|%>
+  <div>
+    <%= user.email %>
+  </div>
+
 <h1>Events</h1>
 <%= @msg%>
 <table>
