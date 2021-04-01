@@ -11,7 +11,7 @@ WORKDIR /ulapp
 
 # ホストのGemfileとGemfile.lockをコンテナにコピー
 ADD Gemfile /ulapp/Gemfile
-ADD Gemfile.lock /ulapp/Gemfile.lock
+ADD gemfile.lock /ulapp/gemfile.lock
 
 # bundle installの実行
 RUN bundle install

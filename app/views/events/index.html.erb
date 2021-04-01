@@ -1,7 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
+<h1>User List</h1>
 
+<% User.all.each do |user|%>
+  <div>
+    <%= link_to user.email,[user] %>
+  </div>
+<% end %>
+
+<h1>Events</h1>
+<%= @msg%>
 <table>
   <thead>
     <tr>
@@ -24,6 +32,15 @@
   </tbody>
 </table>
 
+<%= month_calendar events: @events do |date, events| %>
+  <%= date %>
+
+  <% events.each do |event| %>
+  <div>
+    <%= event.name %>
+  </div>
+  <% end %>
+<% end %>
+
 <br>
 
-<%= link_to 'New Event', new_event_path %>

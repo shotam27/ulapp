@@ -40,7 +40,7 @@ workflows:
                 requires:
                     # deploy ジョブより先に build ジョブを実行しろ、という命令
                     - build
-                # master ブランチに push された場合のみ deploy ジョブを実行する
+                # production ブランチに push された場合のみ deploy ジョブを実行する
                 filters:
                     branches:
                         only: production

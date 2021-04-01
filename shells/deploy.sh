@@ -13,4 +13,4 @@ MY_IP=`curl -f -s ifconfig.me`
 
 trap "aws ec2 revoke-security-group-ingress --group-id $MY_SECURITY_GROUP --protocol tcp --port 22 --cidr $MY_IP/32" 0 1 2 3 15
 aws ec2 authorize-security-group-ingress --group-id $MY_SECURITY_GROUP --protocol tcp --port 22 --cidr $MY_IP/32
-ssh $USER_NAME@$HOST_NAME "cd ulapp && git pull origin production"
+ssh $USER_NAME@$HOST_NAME "cd ulapp && git fetch && git pull origin production && docker-compose down && docker-compose up -d && docker-compose run app rails db:migrate RAILS_ENV=production"
