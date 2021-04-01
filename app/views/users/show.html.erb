@@ -1,3 +1,9 @@
-<h1>user list</h1>
+<h3><%= @user.email %></h3>
 
-<% User.all.each do |user|%>
+<%= render "relationships/follow_button", user: @user %>
+
+<% @user.event.each do |event| %>
+    <div>
+        <%= event.name %>
+    </div>
+<% end %>

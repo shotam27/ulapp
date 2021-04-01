@@ -4,7 +4,7 @@
 
 <% User.all.each do |user|%>
   <div>
-    <%= user.email %>
+    <%= link_to user.email,[user] %>
   </div>
 <% end %>
 
@@ -44,4 +44,3 @@
 
 <br>
 
-<%= link_to 'New Event', new_event_path %>
