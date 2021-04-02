@@ -55,10 +55,16 @@
         </li><!-- /.menu-item c-->
         
         <li class="menu-item d">
-          <a>Account</a>
+          <a>アカウント</a>
           <ul class="sub-menu">
             <li class="sub-menu-item d">
               <%= link_to "カレンダー","../events" %>
+            </li>
+            <li class="sub-menu-item d">
+              <%= link_to "予定作成",new_event_path %>
+            </li>
+            <li class="sub-menu-item d">
+              <%= link_to "設定の変更",edit_user_registration_path %>
             </li>
             <li class="sub-menu-item d">
               <%= link_to "サインアウト",destroy_user_session_path, method: :delete %>

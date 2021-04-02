@@ -10,13 +10,13 @@
   </div>
 <% end %>
 
-<h1>Events</h1>
+<h1>あなたの予定</h1>
 <%= @msg%>
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Start time</th>
+      <th>予定</th>
+      <th>日にち</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,16 +26,15 @@
       <tr>
         <td><%= event.name %></td>
         <td><%= event.start_time %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '編集', edit_event_path(event) %></td>
+        <td><%= link_to '削除', event, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <%= month_calendar events: @events do |date, events| %>
-  <%= date %>
+  <%= date.day %>
 
   <% events.each do |event| %>
   <div>
