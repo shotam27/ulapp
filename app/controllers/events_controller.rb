@@ -1,6 +1,10 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[ show edit update destroy ]
 
+  def timeline
+    @events = Event.all
+  end
+
   # GET /events or /events.json
   def index
     if current_user == nil then

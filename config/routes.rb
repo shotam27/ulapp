@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users
+  get 'events/timeline', to: 'events#timeline'
   
   root 'events#index'
   resources :events
