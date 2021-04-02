@@ -25,8 +25,10 @@
         <td><%= event.user.nickname %></td>
         <td><%= event.name %></td>
         <td><%= event.start_time %></td>
+        <% if current_user == event.user %>
         <td><%= link_to '編集', edit_event_path(event) %></td>
         <td><%= link_to '削除', event, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+        <% end%>
       </tr>
     <% end %>
   </tbody>
@@ -37,7 +39,14 @@
 
   <% events.each do |event| %>
   <div>
-    <%= event.user.nickname %>|<%= event.name %>
+    <%= event.user.nickname %>
+    |
+    <% if current_user == event.user%>
+    <%= link_to event.name, edit_event_path(event)%>
+    <% else %>
+    <%= event.name %>
+    <% end %>
+
   </div>
   <% end %>
 <% end %>
