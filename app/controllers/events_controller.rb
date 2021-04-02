@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: %i[ show edit update destroy ]
 
   def timeline
-    @events = Event.all
+    @events = Event.where(user_id: [current_user.id, *current_user.followings])
   end
 
   # GET /events or /events.json
