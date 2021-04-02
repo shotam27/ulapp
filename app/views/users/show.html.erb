@@ -1,9 +1,6 @@
+<h3><%= @user.nickname %></h3>
 <h3><%= @user.email %></h3>
+
 
 <%= render "relationships/follow_button", user: @user %>
 
-<% @user.event.each do |event| %>
-    <div>
-        <%= event.name %>
-    </div>
-<% end %>

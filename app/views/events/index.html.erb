@@ -1,10 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<p>こんにちは、<%= current_user.nickname %>さん！</p>
+
 <h1>User List</h1>
 
 <% User.all.each do |user|%>
   <div>
-    <%= link_to user.email,[user] %>
+    <%= link_to user.nickname, [user] %>
   </div>
 <% end %>
 

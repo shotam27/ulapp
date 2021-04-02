@@ -28,7 +28,8 @@ body {
   font-size: 36px;
   position: relative;
   color: gray;
-  margin-right: auto
+  margin-right: auto;
+  padding-left: 1%;
 }
 
 *,
@@ -46,49 +47,54 @@ a:visited {
 
 /* カラム落ちの防止 */
 .header-list {
+  display: flex;
   height: 72px;
-  width: 25%;
+  width: 50%;
   font-size: 0;
-  margin: 0;
   padding: 0;
   list-style: none;
+  justify-content: flex-end;
 }
 
 /* メインメニュー */
 .menu-item {
   display: inline-block;
-  width: 25%;
-  height: 100%;
+  height: 72px;
   position: relative;
 }
 
 .menu-item a {
   display: flex;
   width: 100%;
-  height: 100%;
   line-height: 100%;
-  font-size: 16px;
+  font-size: 11.5px;
   text-align: center;
   justify-content: center;
   align-items: center;
   background-color: white;
-  margin: 0;
   padding: 0;
   text-decoration: none;
   transition: all 300ms 0s ease;
 }
 
+.menu-item > a {
+  margin-top: 18px;
+  height: 54px;
+}
+
 /* サブメニュー */
 .sub-menu {
-  position: absolute;
+  position: relative;
   width: 100%;
-  top: 72px;
   margin: 0;
   padding: 0;
   list-style: none;
+  text-decoration: none;
 }
 
 .sub-menu-item {
+  display: flex;
+  width: 100%;
   overflow: hidden;
   opacity: 0;
   height: 0;
@@ -98,19 +104,22 @@ a:visited {
   margin: 0;
   padding: 0;
   text-decoration: none;
+  text-align: center;
 }
 
 /* メインメニューマウスカーソルが乗ったらサブメニューを出現させる */
 .menu-item:hover > .sub-menu > .sub-menu-item {
   overflow: visible;
   opacity: 1;
-  height: 54px;
+  width: 100%;
+  height: 36px;
   box-shadow: 0 0 8px gray;
 }
 
 .menu-item:hover > a {
   background-color: gray;
   color: white;
+  text-decoration:underline
 }
 
 .sub-menu-item:hover > a {

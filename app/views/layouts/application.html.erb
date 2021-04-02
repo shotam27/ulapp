@@ -10,8 +10,6 @@
   </head>
 
   <body>
-    <!-- /#header-nav -->
-
     <nav id="header-nav">
     
       <div class="title">
@@ -57,13 +55,13 @@
         </li><!-- /.menu-item c-->
         
         <li class="menu-item d">
-          <a href="">メニューD</a>
+          <a>Account</a>
           <ul class="sub-menu">
             <li class="sub-menu-item d">
-              <a href="">サブメニュー1</a>
+              <%= link_to "カレンダー","../events" %>
             </li>
             <li class="sub-menu-item d">
-              <a href="">サブメニュー2</a>
+              <%= link_to "サインアウト",destroy_user_session_path, method: :delete %>
             </li>
           </ul><!-- /.sub-menu -->
         </li><!-- /.menu-item d -->
