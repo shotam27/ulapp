@@ -1,6 +1,14 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[ show edit update destroy ]
 
+  def search
+    @users = User.search(params[:search])
+  end
+
+  def timeline
+    @events = Event.where(user_id: [current_user.id, *current_user.followings])
+  end
+
   # GET /events or /events.json
   def index
     if current_user == nil then
@@ -8,8 +16,8 @@ class EventsController < ApplicationController
     else
       @msg = current_user.email
       @events = current_user.event.all
+      @users = User.search(params[:search])
     end
-
   end
 
   # GET /events/1 or /events/1.json
