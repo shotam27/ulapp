@@ -26,8 +26,8 @@
         <td><%= event.name %></td>
         <td><%= event.start_time %></td>
         <% if current_user == event.user %>
-        <td><%= link_to '編集', edit_event_path(event) %></td>
-        <td><%= link_to '削除', event, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+        <td><%= link_to fa_icon("edit"), edit_event_path(event) %></td>
+        <td><%= link_to fa_icon("trash"), event, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
         <% end%>
       </tr>
     <% end %>

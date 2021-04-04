@@ -66,3 +66,6 @@ gem 'dotenv-rails'
 gem 'devise'
 
 gem "simple_calendar", "~> 2.0"
+
+gem 'font-awesome-sass'
+gem 'font-awesome-rails'

@@ -1,21 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<p>こんにちは、<%= current_user.nickname %>さん！</p>
-
-<%= form_tag events_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :nickname => nil %>
-  </p>
-<% end %>
-
-<% @users.each do |user|%>
-  <div>
-    <%= link_to user.nickname, [user] %>
-  </div>
-<% end %>
-
-
 <h1>あなたの予定</h1>
 <%= @msg%>
 <table>
@@ -32,8 +16,8 @@
       <tr>
         <td><%= event.name %></td>
         <td><%= event.start_time %></td>
-        <td><%= link_to '編集', edit_event_path(event) %></td>
-        <td><%= link_to '削除', event, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+        <td><%= link_to fa_icon("edit"), edit_event_path(event) %></td>
+        <td><%= link_to fa_icon("trash"), event, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
       </tr>
     <% end %>
   </tbody>
