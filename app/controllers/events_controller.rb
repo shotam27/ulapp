@@ -12,8 +12,8 @@ class EventsController < ApplicationController
     else
       @msg = current_user.email
       @events = current_user.event.all
+      @users = User.search(params[:search])
     end
-
   end
 
   # GET /events/1 or /events/1.json

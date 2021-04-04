@@ -2,13 +2,19 @@
 
 <p>こんにちは、<%= current_user.nickname %>さん！</p>
 
-<h1>User List</h1>
+<%= form_tag events_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :nickname => nil %>
+  </p>
+<% end %>
 
-<% User.all.each do |user|%>
+<% @users.each do |user|%>
   <div>
     <%= link_to user.nickname, [user] %>
   </div>
 <% end %>
+
 
 <h1>あなたの予定</h1>
 <%= @msg%>

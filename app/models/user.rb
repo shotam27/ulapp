@@ -23,5 +23,13 @@ class User < ApplicationRecord
   def following?(other_user)
     self.followings.include?(other_user)
   end
-  
+
+  def self.search(search) #self.でクラスメソッドとしている
+    if search # Controllerから渡されたパラメータが!= nilの場合は、titleカラムを部分一致検索
+      User.where(['nickname LIKE ?', "%#{search}%"])
+    else
+      User.all #全て表示。
+    end
+  end
+
 end
