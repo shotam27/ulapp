@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :予定の名前 %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :start_time %>
+    <%= form.label :時間 %>
     <%= form.date_select :start_time %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div>
+    <%= form.submit "作成", :class=>"btn" %>
   </div>
 <% end %>

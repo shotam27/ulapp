@@ -98,10 +98,8 @@ body[id*='home']{
 }
 
 #header-nav .title {
-  font-weight :900;
   position: relative;
   margin-right: auto;
-  padding-left: 3%;
 }
 
 /* メニューバー終わり */

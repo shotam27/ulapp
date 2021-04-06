@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   get 'home/index', to: 'home#index'
+  get 'home/kiyaku', to: 'home#kiyaku'
+  get 'home/privacy', to: 'home#privacy'
   root to: 'home#index'
 
   devise_for :users
