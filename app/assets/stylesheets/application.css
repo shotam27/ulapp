@@ -73,13 +73,6 @@ body {
   margin:0;
 }
 
-body[id*='sign']{
-  background-image: url('mable-white-p.jpg');
-}
-
-body[id*='home']{
-  background-image: url('amr-taha-87HyqnGrCmg-unsplash.jpg');
-}
 
 #content {
   margin: 1% 3%;
