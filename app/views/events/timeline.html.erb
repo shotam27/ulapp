@@ -1,13 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<h1>User List</h1>
-
-<% User.all.each do |user|%>
-  <div>
-    <%= link_to user.nickname, [user] %>
-  </div>
+<div class="sidebar">
+<h3>フォロー 一覧</h3>
+<hr>
+<table>
+<% current_user.followings.all.each do |user|%>
+  <tr>
+    <td><%= user.nickname %></td>
+    <td><%= render "relationships/follow_button", user: user %></td>
+  </tr>
 <% end %>
+</table>
 
+</div>
+
+<div class="main">
 <h1>みんなの予定</h1>
 <table>
   <thead>
@@ -52,3 +59,4 @@
 
 <br>
 
+</div>

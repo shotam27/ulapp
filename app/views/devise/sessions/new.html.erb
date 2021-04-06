@@ -2,6 +2,7 @@
   <div class="box-inner">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <h1>ログイン</h1>
+      <hr>
       <div class="box-email">
         <%= f.label :email, "Eメール" %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -36,7 +37,7 @@
     <% end %>
 
     <div class="box-newusr">
-      <p><span>------------</span> Schareの新しいお客様ですか？ <span>------------</span></p>
+      <p><span>------------</span> Schareは初めてですか？ <span>------------</span></p>
       <%= link_to "Schareアカウントを作成", new_user_registration_path %>
     </div>
   </div>

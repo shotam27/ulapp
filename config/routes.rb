@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
-  root 'events#index'
+  get 'home/index', to: 'home#index'
+  root to: 'home#index'
 
   devise_for :users
   resources :users
 
-  get 'events/timeline', to: 'events#timeline'  
+  get 'events/timeline', to: 'events#timeline'
   get 'events/search', to: 'events#search'
   resources :events
 

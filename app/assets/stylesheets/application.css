@@ -5,7 +5,7 @@
  *= require font-awesome
  */
  
-
+/* ボタン関係　*/
 
  .btn,
  a.btn,
@@ -41,8 +41,11 @@
    background: gray;
  }
 
-a{
+/* ボタン関係　*/
+
+ a{
   transition: 0.3s;
+  color: black;
 }
 
 a:hover{
@@ -74,6 +77,9 @@ body[id*='sign']{
   background-image: url('mable-white-p.jpg');
 }
 
+body[id*='home']{
+  background-image: url('amr-taha-87HyqnGrCmg-unsplash.jpg');
+}
 
 #content {
   margin: 1% 3%;
@@ -92,10 +98,13 @@ body[id*='sign']{
 }
 
 #header-nav .title {
+  font-weight :900;
   position: relative;
   margin-right: auto;
-  padding-left: 1%;
+  padding-left: 3%;
 }
+
+/* メニューバー終わり */
 
 *,
 *::before,
@@ -179,13 +188,15 @@ body[id*='sign']{
 .menu-item:hover > a {
   background-color: gray;
   color: white;
-  text-decoration:underline
 }
 
 .sub-menu-item:hover > a {
   background-color: gray;
   color: white;
 }
+
+/* メニューバー終わり */
+
 
 .search_container{
   position: relative;
@@ -235,6 +246,61 @@ body[id*='sign']{
 .box-inner {
   padding: 20px 26px;
 }
+
+
+/* サイドバー関連 */
+
+.sidebar{
+  width: 200px;
+  min-height: 750px;
+  height: auto;
+  float: left;
+  padding: 10px 20px 20px;
+  box-shadow: 0 0 8px gray;
+}
+
+.main { 
+  margin-left:220px;
+  width:auto;
+  min-height:500px;
+  height:auto;
+  margin-top:10px;
+  }
+
+/* サイドバー関連　終わり */
+
+/* ホーム画面用 interface */
+
+.explanation-1 {
+  font-size: large;
+  background-color: rgba(180, 180, 180, 0.76);
+  color: white;
+  margin:  0 10% 1% 10%; 
+  padding: 1% 10% 1% 5%;
+}
+
+.explanation-1 > h1 {
+  margin: 0;
+  font-size: 80px;
+}
+
+.explanation-2{
+  margin:  0 50% 0 0; 
+  padding: 1% 5% 1% 5%;
+  background-color: rgb(151, 162, 173);
+}
+.explanation-2 > h1 {
+  margin: 0;
+  padding-left: 5%;
+  color: rgb(151, 162, 173);
+  background-color: black;
+}
+
+
+/* ホーム画面用 interface 終わり*/
+
+
+/* ユーザー登録UI */
 
 h1 {
   font-weight: 400;

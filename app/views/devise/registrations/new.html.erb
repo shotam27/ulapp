@@ -4,11 +4,12 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 <h1>アカウント作成</h1>
-
+<hr>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="box-email">
-    <%= f.label :ユーザーネーム %><br />
+    <%= f.label :ユーザーネーム %>
+    <em>後から変更可能です。</em>
     <%= f.text_field :nickname, autofocus: true %>
   </div>
 
