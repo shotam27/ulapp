@@ -20,7 +20,6 @@ jobs:
       image: circleci/classic:edge
     steps:
       - checkout
-      - run: sudo pip install awscli
       - run:
           name: SSH経由のデプロイ
           command: |
